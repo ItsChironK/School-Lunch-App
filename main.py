@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 import tkinter.font as tkFont
 from datetime import datetime
-from tkcalendar import DateEntry
 
 MENU = {
     "Cheeseburger": 5.00,
