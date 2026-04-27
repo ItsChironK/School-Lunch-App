@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 
-# DATA
+# data
 MENU = {
     "Cheeseburger": 5.00,
     "Pizza Slice": 4.00,
@@ -19,18 +19,18 @@ balance = 15.00
 student = {}
 order = []
 
-# WINDOW
+# window 
 root = tk.Tk()
 root.title("School Lunch")
 root.geometry("400x700")
 
-# PAGES
+# pages
 frames = {}
 
 def show_frame(name):
     frames[name].tkraise()
 
-# ---------------- LOGIN PAGE ----------------
+# login page
 login_frame = tk.Frame(root)
 frames["login"] = login_frame
 
@@ -63,7 +63,7 @@ def submit():
 
 tk.Button(login_frame, text="Continue", command=submit).pack(pady=20)
 
-# ---------------- CONFIRM PAGE ----------------
+# this is like the confirmation page
 confirm_frame = tk.Frame(root)
 frames["confirm"] = confirm_frame
 
@@ -79,7 +79,7 @@ def update_confirm():
 tk.Button(confirm_frame, text="Looks Good", command=lambda: show_frame("menu")).pack()
 tk.Button(confirm_frame, text="Edit", command=lambda: show_frame("login")).pack()
 
-# ---------------- MENU PAGE ----------------
+# this is the menu page 
 menu_frame = tk.Frame(root)
 frames["menu"] = menu_frame
 
@@ -120,7 +120,7 @@ def checkout():
 
 tk.Button(menu_frame, text="Checkout", command=checkout).pack(pady=20)
 
-# ---------------- CHECKOUT PAGE ----------------
+# this will be the checkout page
 checkout_frame = tk.Frame(root)
 frames["checkout"] = checkout_frame
 
@@ -136,7 +136,7 @@ def update_checkout():
 
 tk.Button(checkout_frame, text="New Order", command=lambda: show_frame("menu")).pack()
 
-# ---------------- SETUP ----------------
+# this just sets up the main frame
 for frame in frames.values():
     frame.grid(row=0, column=0, sticky="nsew")
 
